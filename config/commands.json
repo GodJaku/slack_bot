@@ -15,4 +15,10 @@
 	"error": {
 		"exclude": true
 	}
+	"bingang": {
+		   "alias": ["*e"],
+		   "endpoint": "#",
+		   "help": "*e [day][class] [builing]",
+		   "description": "find empty builing"
+	}
 }
