@@ -12,13 +12,15 @@
 		"help": "gem [gem-name]",
 		"description": "Fetches details of the specified Ruby gem"
 	},
+
+	"bingang": {
+    "alias": ["e", "empty"],
+    "endpoint": "#",
+    "help": "e [day(string)][class(number)] [builing]",
+		"description": "find empty builing"
+	},
+
 	"error": {
 		"exclude": true
-	}
-	"bingang": {
-		   "alias": ["*e"],
-		   "endpoint": "#",
-		   "help": "*e [day][class] [builing]",
-		   "description": "find empty builing"
 	}
 }
