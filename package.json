@@ -6,7 +6,9 @@
   "dependencies": {
     "request": "^2.65.0",
     "slack-terminalize": "^1.0.0",
-    "mongoose": "~4.6.2"
+    "mongoose": "~4.6.2",
+    "cheerio": "^0.22.0",
+    "url-parse": "^1.1.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

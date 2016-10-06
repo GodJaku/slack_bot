@@ -1,6 +1,6 @@
 {
 	"help": {
-		"alias": [ "halp", "h" ],
+		"alias": [ "halp", "h", "help" ],
 		"endpoint": "#",
 		"help": "help [command](optional)",
 		"description": "To get help on all supported commands, or a specified command"
@@ -14,11 +14,18 @@
 	},
 
 	"bingang": {
-    "alias": ["e", "empty"],
+    "alias": ["e", "empty", "c", "class"],
     "endpoint": "#",
     "help": "e [day(string)][class(number)] [builing]",
 		"description": "find empty builing"
 	},
+
+  "subway" : {
+    "alias": ["s", "subway", "r", "route"],
+    "endpoint": "#",
+    "help": "s [source(string)][destination(string)]",
+		"description": "find shortest route by subway"
+  },
 
 	"error": {
 		"exclude": true
