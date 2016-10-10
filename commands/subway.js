@@ -17,17 +17,16 @@ module.exports = function (param) {
     util.postMessage(param.channel, "Input Error");
     return ;
   }
-  if(mongoose.connection.readyState == 0) mongoose.connect('mongodb://localhost/godjaku');
-  subway.find({"station":{$in:[param.args[0], param.args[1]]}}, {_id:false, station:false, line:false, resultid:false}, function(err, data){
+  if(mongoose.connection.readyState == 0) mongoose.connect('mongodb://localhost/manewhana');
+  subway.find({"station":{$in:[param.args[0], param.args[1]]}}, {_id:false, station:false, line:false, resultID:false}, function(err, data){
     url= "https://www.smrt.co.kr/program/cyberStation/main.jsp?sname2="+param.args[0]+"&stcd2="+getid(data[0])+"&sname3="+param.args[1]+"&stcd3="+getid(data[1]);
-    console.log(url);
-    request(url, {timeout: 1000000, headers:{'user-agent': "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36", 'Content-Type': 'application/x-www-form-urlencoded'}}, function(err, res, b){
+    request(url, {timeout: 1000000, headers:{'user-agent': "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36", 'Content-Type': 'application/json'}}, function(err, res, b){
     // request.get({url: url}, function(err, res, b){
       var result= "";
       if (!err && res.statusCode == 200) {
         result= b;
       } else {
-        result= "지하철 정보를 찾을 수 없습니다";
+        result= "지하철 정보를 찾을 수 없습니다"+res.statusCode;
       }
       util.postMessage(param.channel, result);
     });
